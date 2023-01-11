@@ -1,0 +1,101 @@
+<!doctype html>
+<link rel="stylesheet" href="static/css/main.css">
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Help</title>
+    <style>
+      .collapsible {
+        background-color: rgb(0, 25, 37);
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-size: 25px;
+     
+      }
+      .collapsible:hover {
+        background-color: rgb(23, 0, 23);
+      } 
+      .active {
+        background-color: rgb(0, 211, 243);
+      }
+
+      h1, h3, h4{
+        text-align: center;
+      }
+    
+      .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: lightgray;
+      }
+      </style>
+  </head>
+<body>
+{% include 'navbar.html' %}
+<p class="leftcorner"> v2.0.0</p>
+
+<h1>Help Page</h1>
+<br>
+<h4>Click on a subject to expand</h4>
+<br><br><br>
+<h3>Payment Plan page</h3>
+
+<button type="button" class="collapsible">How to get to the loan calculator form </button>
+<div class="content">
+  <p style="font-size:20px">To get to the loan calculator form, you need to click 'Calculate Loan' at the top of the navigation tabs or if you are in the home page, click 'Calculate Loan' from there.</p>
+</div>
+
+<button type="button" class="collapsible"> What to add to the form</button>
+<div class="content">
+  <p style="font-size:20px">For 'Loan Type' field, enter the type of loan (ie car, boat, house, school, etc)</p>
+  <p style="font-size:20px">For 'Amount' enter the principal amount of the loan (ie 2000, 34000, 120000, etc)</p>
+  <p style="font-size:20px">For 'Interest Rate' field, enter the interest rate. Just add the interger and NOT the percentage sign (ie 2, 2.5, 5, etc</p>
+  <p style="font-size:20px">For 'Years' field, enter the amount of years the loan will be for (ie 1, 2, 5, etc)</p>
+</div>
+<button type="button" class="collapsible">What are the checkboxes for? </button>
+<div class="content">
+  <p style="font-size:20px">Just an option users have to filter out what information they want displayed on the page with the results. CHECKED MARKED Box means that the field will be displayed. </p>
+</div>
+<br><br><br><br>
+
+<h3>Pie Chart Maker</h3>
+<button type="button" class="collapsible">What is this for?</button>
+<div class="content">
+  <p style="font-size:20px"> The Pie Chart Maker is for creating a pie chart. It gives the users the ability to enter information to get an output of the data in the form of a pie chart. It is meant for finance information such as keeping track of where your money is going towards (ie mortgage, student loans, savings, gas bill, etc)</p>
+</div>
+<button type="button" class="collapsible">How to create a pie chart</button>
+<div class="content">
+  <p style="font-size:20px"> To create a pie chart, you need to fill in the subject fields of the form. Enter a name for 'Subject Name' and enter an amount to 'Subject Amount'. You do not need to fill out all 7 of the subjects but if you do add a subject name then you must add subject amount. Click submit to get the pie chart image. </p>
+</div>
+
+<script>
+//Colapsible code. Clicking on block will expand and show more information. 
+let collapse = document.getElementsByClassName("collapsible");
+let i;
+for (i = 0; i < collapse.length; i++) {
+  collapse[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</body>
+</html>
+
+
