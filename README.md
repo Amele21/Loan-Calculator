@@ -1,3 +1,3 @@
-# README
-- To run the program, run the command python app.py
-- Open the following on your browser: http://localhost:5000/
+# Loan Calculator Setup
+- python app.py
+- Open browser and insert: http://localhost:5000/
